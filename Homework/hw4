@@ -1,0 +1,43 @@
+/*
+Author: Yasmine El Houzaly
+Course: CSCI-136
+Instructor: Tong Yi
+Assignment: Homework E2.10 - Cost per 100 Miles
+// The user will enter three number and the program will tell if these three umber are increasing, decreasing or neither.
+*/
+/*
+Write a program that reads three numbers and prints “increasing” 
+if they are in increasing order, “decreasing” if they are in decreasing order, 
+and “neither” other- wise. Here, “increasing” means “strictly increasing”, 
+with each value larger than its predecessor. 
+The sequence 3 4 4 would not be considered increasing.
+*/
+#include<iostream>
+using namespace std;
+int main ()
+{
+    int n1;
+    cout<<"Please enter first number: ";
+    cin>>n1;
+    int n2;
+    cout<<"Please enter second number: ";
+    cin>>n2;
+    int n3;
+    cout<<"Please enter third number: ";
+    cin>>n3;
+    if(n3>n2 && n3>n1 && n1<n2 )
+    {
+        cout<<"increasing";
+    }
+    else if(n1>n2 && n3<n1 && n3<n2 )
+    {
+        cout<<"decreasing";
+    }
+    else(cout<<"neither");
+
+
+
+
+    return 0;
+
+}
