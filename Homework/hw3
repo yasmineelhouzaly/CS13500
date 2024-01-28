@@ -1,0 +1,42 @@
+/*
+Author: Yasmine El Houzaly
+Course: CSCI-136
+Instructor: Tong Yi
+Assignment: Homework E2.10 - Cost per 100 Miles
+//This used ask the user for inputs:
+• The number of gallons of gas in the tank
+• The fuel efficiency in miles per gallon
+• The price of gas per gallon
+and then use a formula to find  the cost per 100 miles and another formula to find how far can the car can go with the gas in the tank.
+*/
+/*
+Write a program that asks the user to input
+• The number of gallons of gas in the tank
+• The fuel efficiency in miles per gallon
+• The price of gas per gallon
+Then print the cost per 100 miles and how far the car can go with the gas in the tank.
+*/
+#include<iostream>
+using namespace std;
+
+int main()
+{
+    double n;
+    cout<<"Please enter the number of gallons of gas in the tank";
+    cin>>n;
+    double f;
+    cout<<"Please enter the fuel efficiency in miles per gallon";
+    cin>>f;
+    double p;
+    cout<<"Please enter the price of gas per gallon";
+    cin>>p;
+    double c=((100/f)*p);
+    double g=f*n;
+    cout<<"The cost per 100 miles is "<<c<<"and the car can go with the gas in the tank for about "<<g;
+
+
+    
+    
+
+    return 0;
+}
