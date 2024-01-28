@@ -1,0 +1,42 @@
+/*
+Author: Yasmine El Houzaly
+Course: CSCI-136
+Instructor: Tong Yi
+Assignment: Homework E3.1 - Positive or Zero or Negative
+
+This program will ask the user to enter a number. 
+If the number that was entered is 0, the program will print, 
+"This is zero", is  the number is positive "This number is positive", this will be printed.
+and if the number is negative, this sentence will be printed on the screen "This number is negative".
+*/
+
+/*
+E3.1 Write a program that reads an integer 
+and prints whether it is negative, zero, or positive.
+*/
+#include <iostream>
+using namespace std;
+
+int main()
+
+{
+    int n;
+    cout<<"Please enter an integer: ";
+    cin>>n;
+    if(n==0)
+    {
+        cout<<"This is zero";
+    }
+    else if (n>0)
+    {
+        cout<<"This number is positive";
+    }
+    else (cout<<"This number is negative");
+    
+    
+    
+    return 0;
+}
+
+    
+   
