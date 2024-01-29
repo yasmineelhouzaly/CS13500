@@ -2,9 +2,9 @@
 Author: Yasmine El Houzaly
 Course: CSCI-136
 Instructor: Tong Yi
-Assignment: Task A. Find the smaller of two integers.
+Assignment: Task B. Print all integers from the requested interval.
 
-// The program will print the smaller number from the two numbers
+// The program will print the numbers in between the two numbers
 */
 /*
 Task B. Print all integers from the requested interval.
