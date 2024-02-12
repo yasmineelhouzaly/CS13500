@@ -1,1 +1,114 @@
+//Author: Yasmine El Houzaly
+//Course: CSCI-136
+//Instructor: Tong Yi
+//Assignment:  Project 1A
+
+/*
+TaskA
+An Arithmetic Game
+Write a C++ main function to accomplish the following tasks and name the source code arithmetic.cpp.
+1. Select an operator randomly from addition ('+'), subtraction ('-'), multiplication ('*'), division ('/'),
+and remainder ('%').
+Hint: You can create an array of characters (type char in C++) with elements '+', '-', '*', '/', and '%'. Generate a random integer to represent a valid index in this array. Retrieve the operator located at the chosen index in the array.
+Warning: To ensure accurate grading in Gradescope, save operators in the order of '+', '-', '*', '/', and '%'. If the chosen operator differs from the grading script’s expectation, you may not receive credits for your work.
+2. Generate the first operand as a single-digit integer, that is, an integer in the range [0, 9].
+3. If the operator is either division or remainder, generate the second operand as a non-zero single-digit integer, that is, an integer in the range [1, 9], otherwise, generate the second operand as a single-digit integer in the range [0, 9].
+4. Perform the operation on the operands based on the chosen operator and save the result.
+5. Prompt the user with the problem, receive a reply from the user. If the reply is correct, print “true”; otherwise, print “false”.
+Here is a sample input/output: 􏰀 􏰂􏰁
+􏰃 And another sample input/output:       􏰀 􏰂􏰁
+􏰃 Lastly, one more sample input/output:       􏰀
+􏰂􏰁
+There are two approaches to generate a random integer in a given range. To ensure compatibility with Gradescope, it is necessary to use the first approach. Furthermore, generate random integers in the following order:
+􏰃
+    what is 7 % 6? 1
+true
+    what is 1 / 9? 0
+true
+   
+what is 7 % 3? 2
+false
+1
+1. Choose an integer representing a valid index in the character array with elements ’+’, ’-’, ’*’, ’/’, ’%’. 2. Then generate the first operand.
+3. Finally, generate the second operand.
+The first approach involves using the rand() from the <cstdlib> library along with the remainder oper- ator, as demonstrated in an example using rand function.
+􏰃􏰀
+#include <iostream> #include <cstdlib> //rand using namespace std;
+int main() {
+int v1 = rand() % 100; // v1 in the range 0 to 99 intv2=rand()%100+1; //v2intherange1to100 int v3 = rand() % 30 + 1985; // v3 in the range 1985-2014
+return 0;
+}
+1 2 3 4 5 6 7 8 9
+10 11
+1
+2
+3
+􏰂􏰁
+In the second approach, utilize the <random> library to generate a random integer in the range [1, 6] using combinations of generators and distributions.
+􏰃􏰀
+std::default_random_engine generator;
+std::uniform_int_distribution<int> distribution(1,6);
+int dice_roll = distribution(generator); // generates number in the range 1..6*/
+
+#include<iostream>
+#include<cstdlib> //rand using namespace std;
+#include<random>
+#include<cmath>
+#include<string>
+using namespace std;
+
+int main()
+{
+    srand(time(0));
+    //task1
+    char array[]={ '+', '-', '*', '/', '%'};
+    char randomOperator=array[rand()%5];
+    //Task2
+    int secondNum;
+    int firstNum=rand()%10;
+    //Task3
+    if(randomOperator=='/'||randomOperator=='%') //If the operator is either division or remainder
+    {
+        secondNum=rand()%9+1; //generate the second operand as a non-zero single-digit integer, that is, an integer in the range [1, 9],
+    }
+    else
+    {
+        secondNum=rand()%10;
+    }
+    //Task4
+    int result;
+    if(randomOperator=='+')
+    {
+        result=firstNum+ secondNum;
+    }
+    else if(randomOperator=='-')
+    {
+        result=firstNum-secondNum;
+    }
+    else if(randomOperator=='*')
+    {
+        result=firstNum*secondNum;  
+    }
+    else if(randomOperator=='/')
+    {
+        result=firstNum / secondNum;  
+    }
+    else if(randomOperator=='%')
+    {
+        result=firstNum % secondNum;  
+    }
+    int userResult;
+    cout<<"what is "<<firstNum<<" "<<randomOperator<<" "<<secondNum<<" ? ";
+    cin>>userResult;
+    if(userResult==result)
+    {
+        cout<<"true";
+    }
+    else 
+    {
+        cout<<"false";
+    }   
+    
+    return 0;
+}
 
